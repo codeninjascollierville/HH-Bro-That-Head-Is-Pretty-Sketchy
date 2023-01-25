@@ -7,15 +7,15 @@ public class PlayerControls : MonoBehaviour
 {
     //rigid body 2d object that is stored
     [Header("RigidBody")]
-    public Rigidbody2D rb
-        [Header("Default Down Speed")]
-        //downward speed of the object
-        public float downSpeed = 20f
-        [Header("Default Movement Speed")]
-        //movement speed of the object
-        [Header("Default Directional Movement Speed")]
-        //movement direction of the object
-        public float movement = 0f
+    public Rigidbody2D rb;
+    [Header("Default Down Speed")]
+    public float downSpeed = 20f;
+    [Header("Default Movement Speed")]
+    //movement speed of the object
+    public float movementSpeed = 10f;
+    [Header("Default Directional Movement Speed")]
+    //movement direction of the object
+    public float movement = 0f;
 
 
 
@@ -39,10 +39,10 @@ public class PlayerControls : MonoBehaviour
     {
         //movement equals horizontal movement
         //multiplied by movement speed
-        movement = Input.GetAxis("Horozontal") * movementSpeed;
-        //if direction on x axis is less than 0
-        else
-        {
+        movement = Input.GetAxis("Horozontal") * movementSpeed; }
+    //if direction on x axis is less than 0
+
+} else {
             //object faces to the right
             this.GetComponent<SpriteRenderer>().flipX = true;
 
