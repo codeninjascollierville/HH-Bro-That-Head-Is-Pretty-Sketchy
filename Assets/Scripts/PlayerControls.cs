@@ -41,10 +41,14 @@ public class PlayerControls : MonoBehaviour
         //multiplied by movement speed
         movement = Input.GetAxis("Horozontal") * movementSpeed; }
     //if direction on x axis is less than 0
-
+if (movement < 0)
+{
+//object faces to the left
+this.GetComponent<SpriteRenderer>().flipX = false;
+}
 } else {
             //object faces to the right
-            this.GetComponent<SpriteRenderer>().flipX = true;
+    this.GetComponent<SpriteRenderer>().flipX = true;
 
         }
 
@@ -67,4 +71,13 @@ public class PlayerControls : MonoBehaviour
 
 
     }
+}
+
+
+private void OnCollisionEnter2D(Collision2D collision)
+
+{
+//velocity with the downspeed
+rb.velocity = new Vector3(rb.velocity.x, downspeed, 0);
+
 }
