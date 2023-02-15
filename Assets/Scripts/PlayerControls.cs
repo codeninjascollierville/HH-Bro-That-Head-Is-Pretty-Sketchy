@@ -39,25 +39,25 @@ public class PlayerControls : MonoBehaviour
     {
         //movement equals horizontal movement
         //multiplied by movement speed
-        movement = Input.GetAxis("Horozontal") * movementSpeed; }
+        movement = Input.GetAxis("Horozontal") * movementSpeed; 
     //if direction on x axis is less than 0
 if (movement < 0)
 {
 //object faces to the left
 this.GetComponent<SpriteRenderer>().flipX = false;
-}
+
 } else {
             //object faces to the right
     this.GetComponent<SpriteRenderer>().flipX = true;
 
-        }
+        }}
 
         //fixedupdate called every fixed frame-rate frame
         void FixedUpdate()
         {
             //vector 2 which is x y velocity
             //equals to the velocity of the rigidbody2D
-            Vector2 veolocity = rb.velocity;
+            Vector2 velocity = rb.velocity;
             //velocity of x axis equals to
             //the direction movement on the x axis
             //of the charactor
@@ -70,14 +70,13 @@ this.GetComponent<SpriteRenderer>().flipX = false;
         }
 
 
+
+    private void OnCollisionEnter2D(Collision2D collision)
+
+    {
+        //velocity with the downspeed
+        rb.velocity = new Vector3(rb.velocity.x, downSpeed, 0);
+
     }
-}
 
-
-private void OnCollisionEnter2D(Collision2D collision)
-
-{
-//velocity with the downspeed
-rb.velocity = new Vector3(rb.velocity.x, downspeed, 0);
-
-}
+};
