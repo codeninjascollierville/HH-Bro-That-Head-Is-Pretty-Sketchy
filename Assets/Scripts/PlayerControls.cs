@@ -39,7 +39,7 @@ public class PlayerControls : MonoBehaviour
     {
         //movement equals horizontal movement
         //multiplied by movement speed
-        movement = Input.GetAxis("Horozontal") * movementSpeed; 
+        movement = Input.GetAxis("Horizontal") * movementSpeed; 
     //if direction on x axis is less than 0
 if (movement < 0)
 {
