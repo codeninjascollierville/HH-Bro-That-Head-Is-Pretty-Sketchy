@@ -5,6 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
+public void GameOver(){
+gameOverCanvas.SetActive(true);
+
+}
+
+
+
+
+
+[Header("Game Over UI Canvas Object")]
+public GameObject gameOverCanvas;
+
+
+
+
 
 [Header("Platform Object")]
 public GameObject platform;
