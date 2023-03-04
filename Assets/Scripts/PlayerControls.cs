@@ -18,7 +18,9 @@ public class PlayerControls : MonoBehaviour
     public float movement = 0f;
 
 
-
+[Header("Score Text")]
+public Text scoreText;
+private float topScore = 0.0f;
 
 
 
@@ -65,6 +67,28 @@ this.GetComponent<SpriteRenderer>().flipX = false;
             //rigidbody2d velocity equals to
             //velocity of the object
             rb.velocity = velocity;
+
+            if (rb.velocity.y > 0 && transform.position.y > topScore){
+                topScore = transform.position.y;
+
+
+            }
+            scoreText.text = "Score: " + Mathf.Round(topScore).ToString();
+        
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
         
         
         }
